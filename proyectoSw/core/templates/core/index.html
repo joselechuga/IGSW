@@ -18,9 +18,10 @@
 
     <nav class="navbar bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                Bootstrap
+            <a class="navbar-brand" href="{% url 'index' %}">
+                Lo importo por ti
             </a>
+            <a href="{% url 'login' %}" class="navbar-brand">Iniciar sesíon</a>
         </div>
     </nav>
 
@@ -44,10 +45,11 @@
 
 
             <div class="card" style="width: 18rem;">
-                <a href="{% url 'mousepad' %}">
+                <a href="{% url 'combo_teclado' %}">
                     <img class="imagen" src="{% static 'core/img/combo_teclado.png' %}" class="card-img-top" alt="...">
+                    <small class="textocarta">Combo Redragon</small>
                     <div class="card-body">
-                        <p class="card-text"><a href="{% url 'combo_teclado' %}">$51.990</a></p>
+                        <p class="card-text"><a class="enlaceprecio" href="{% url 'combo_teclado' %}">$51.990</a></p>
                     </div>
                 </a>
             </div>
@@ -56,7 +58,7 @@
                 <a href="">
                     <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text"><a href="producto.html">$10.990</a></p>
+                        <p class="card-text"><a class="enlaceprecio" href="producto.html">$10.990</a></p>
                     </div>
                 </a>
             </div>
