@@ -34,6 +34,25 @@
 
         <div id="contenedor_tarjetas" class="row">
             <div class="card" style="width: 18rem;">
+                <a href="{% url 'mousepad' %}">
+                    <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><a href="{% url 'mousepad' %}">$10.990</a></p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="card" style="width: 18rem;">
+                <a href="{% url 'mousepad' %}">
+                    <img class="imagen" src="{% static 'core/img/combo_teclado.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><a href="{% url 'combo_teclado' %}">$51.990</a></p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card" style="width: 18rem;">
                 <a href="">
                     <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -42,27 +61,8 @@
                 </a>
             </div>
 
-
             <div class="card" style="width: 18rem;">
-                <a href="">
-                    <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><a href="producto.html">$10.990</a></p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="">
-                    <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><a href="producto.html">$10.990</a></p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="">
+                <a href="{% url 'login' %}">
                     <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text"><a href="producto.html">$10.990</a></p>
