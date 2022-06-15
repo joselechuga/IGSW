@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib import messages
-from core.models import nuevoUsuario
+from .forms import nuevoUsuarioForm
+#from core.models import nuevoUsuario
+from .models import nuevoUsuario
 # Create your views here.
 
 def index(request):
@@ -14,6 +16,21 @@ def mousepad(request):
 
 def com_tec(request):
     return render(request,'core/combo_teclado.html')
+
+def form_registrousu(request):
+    datos={
+        'form': nuevoUsuarioForm()
+
+    }
+    if request.method == 'POST':
+        formulario = nuevoUsuarioForm(request.POST)
+
+        if formulario.is_valid():
+            formulario.save()
+            datos['mensaje'] = 'El usuario se ha registrado correctamente'
+
+    return render(request,'core/form_registrousu.html',datos)
+
 
 def registroUsuario(request):
     if request.method== 'POST':
