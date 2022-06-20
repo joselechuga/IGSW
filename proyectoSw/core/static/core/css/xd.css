@@ -1,0 +1,46 @@
+
+
+img{
+    height: 150px;
+    width: 280px;
+}
+
+h1{
+    color: brown;
+}
+
+#titulo{
+    display: flex;
+    justify-content:center;
+    padding: 10px;
+    margin: 5px;
+}
+
+#contenedor_tarjetas{
+    display: flex;
+    justify-content: center;
+}
+
+.textocarta{
+    font-size: 1em;
+    color: black;
+}
+
+.enlaceprecio{
+    color: red;
+}
+
+a{
+    color: brown;
+    font-size: 30px;
+}
+
+.botones{
+    margin: 10px;
+    padding: 10px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+}

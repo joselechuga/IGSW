@@ -1,19 +1,19 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
 <head>
-    {% load static %}
     <title>YIPT</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../core/style.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+{% if request.session.Email %}
+{{request.session.Email}} <a href="{% url 'login'  %}"> cerrar sesion </a>
+{% else %}
 
 <body>
 
@@ -162,5 +162,6 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 </body>
+{% endif %}
 
 </html>

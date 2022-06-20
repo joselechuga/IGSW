@@ -1,6 +1,11 @@
+from contextvars import Context
+from multiprocessing import context
+from telnetlib import AUTHENTICATION
 from django.shortcuts import render
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import nuevoUsuarioForm
+
 #from core.models import nuevoUsuario
 from .models import nuevoUsuario
 # Create your views here.
@@ -21,6 +26,7 @@ def form_registrousu(request):
     datos={
         'form': nuevoUsuarioForm()
 
+
     }
     if request.method == 'POST':
         formulario = nuevoUsuarioForm(request.POST)
@@ -31,16 +37,13 @@ def form_registrousu(request):
 
     return render(request,'core/form_registrousu.html',datos)
 
-
-def registroUsuario(request):
-    if request.method== 'POST':
-        nombreUsuario=request.POST.get('nombreUsuario')
-        psw=request.POST.get('password')
-        email=request.POST.get('correo')
-        edad=request.POST.get('edad')
-        genero=request.POST.get('genero')
-        nuevoUsuario(nombreUsuario=nombreUsuario,psw=psw,email=email,edad=edad,genero=genero).save()
-        messages.success(request,'el usuario'+request.POST['nombreUsuario']+'se ha registrado correctamente')
-        return render(request,'core/registrarse.html')
-    else:
-        return render(request,'core/registrarse.html')
+def login(request):
+    if request.method=='POST':
+        try:
+            detalleUsuario= nuevoUsuario.objects.get(Email=request.POST['email'], psw=request.POST['password'])
+            print("Usuario",detalleUsuario)
+            request.session['Email']=detalleUsuario.Email
+            return render(request,'core/index.html')
+        except nuevoUsuario.DoesNotExist as e:
+            messages.error(request,'Usuario o contraseña incorrectos')
+    return render(request, 'login.html')

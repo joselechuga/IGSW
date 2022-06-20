@@ -1,22 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.2.0-beta1 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-  </head>
-  <body>
-     
-    <h1>Si esto se ve , la wea enlaza bien</h1>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<form method="post" action="" id="formulario">
+    <center>
+        <div class="container">
+            <h1>Pagina de login</h1>
+            {% csrf_token %}
+            <div class="form-group">
+                <table cellpadding="5" cellspacing="2" border="1">
+                    <thead>
+                        <tr>
+                            <th colspan="2" align="center">Login</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ingrese su correo</td>
+                            <td><input type="Email" name="email" placeholder="Ingrese su correo" required></td>
+                        </tr>
+                        <tr>
+                            <td>Contraseña</td>
+                            <td><input type="password" name="psw" placeholder="Ingrese su contraseña" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <button type="submit" class="btn btn-primary">login</button>
+                                <button type="reset" class="btn btn-danger">Cancelar</button>
+                            </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </center>
+</form>
+</body>
 </html>
