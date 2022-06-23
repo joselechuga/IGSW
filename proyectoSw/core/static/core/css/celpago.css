@@ -1,0 +1,102 @@
+body{
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.cuadros{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px 10px 10px 10px ;
+}
+
+.izquierdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px 10px 10px 10px;
+}
+
+.seleccion{
+    display: flex;
+
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    border-radius: 10px 10px 10px 10px;
+}
+
+.imgdeb{
+    height: 5em;
+    width: 5em;
+}
+
+.btn{
+    border: 1px solid black;
+    width: 15em;
+    margin: 5px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 4px 4px 4px rgb(77, 76, 76);
+}
+
+
+/*LADO DERECHO*/
+
+.derecho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2b2b2c;
+    width: 44em;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+.datostarjeta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagoinicio{
+  border: 2px solid black;
+  border-radius: 200px 200px 200px 200px;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.cv{
+    width: 100px;
+}
+
+a{
+    font-size: 10px;
+}
+
+.divbotonpago{
+    padding: 10px;
+    margin: 10px;
+}
+
+.botonpago{
+    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    color: #e2ebf0;
+}
+
+.divcancpago{
+    margin: 10px;
+    padding: 10px;
+}
+
+.cancpago{
+    font-size: 15px;
+}
+
+

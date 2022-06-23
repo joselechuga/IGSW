@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="icon"  src="{% static 'core/img/importadora larrain 2.png' %}" >
+    <title>Combo Redragon</title>
+</head>
+<body>
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="{% url 'carrito' %}"><img src="{% static 'core/img/carrito.png' %}" alt="Item" width="50" height="50"></a>
+        <a href="{% url 'index' %}"><img src="{% static 'core/img/yit larrain.png' %}" alt="Item" width="75" height="75"></a> 
+    </nav>
+    <!--Fin Barra de navegación-->
+    <!--Cuadro producto-->
+    <div class="precio">
+        <div class = "col-12 md-1">
+            <div class="item shadow mb-4">
+                <h3 class="item-title" style="text-align:left;">Redragon Kumara K552 + Centrophorus M601 + Archeleon M (K552-BA)</h3>
+                <img class="item-image" src="{% static 'core/img/comboredragon.png' %}" alt="Item" width="800" height="800">
+                <div class="item-details">
+                    <h4 class="item-price">$45.900</h4>
+                    <button class="item-button btn btn-primary addToCart">Añadir al carro</button>
+                </div>
+     <div class="producto">
+        <br>
+        <div class="envios">
+            <input type="radio" name="transporte" value="1">Envio a agencia
+            <input type="radio" name="transporte" value="2">Despacho a domicilio
+        </div>
+        <!--HACER QUE ELIGA UNA DE LAS 2 OPCIONES DE ENVIO-->
+        <br>
+        <div class="contacto" align="">
+            <p><strong>¿Dudas? Contáctanos al</strong><a href="https://wa.me/message" target="_blank" style="color: #000000;"><strong><img src="https://www.freepnglogos.com/uploads/whatsapp-logo-light-green-png-0.png" width="30" alt="whatsapp-logo-light-green-png-0.png" />+569 08975537</strong></a></p>
+        </div>
+    </div>
+    <div class="desc2" align="">
+        <h3>Especificaciones</h3>
+        <table cellspacing="0" cellpadding="0" dir="ltr" border="1"><colgroup><col width="267" /><col width="420" /></colgroup>
+        <tbody>
+        <tr bgcolor=lightgray>
+        <td><strong>Color</strong></td>
+        <td>Negro</td>
+        </tr>
+        <tr>
+        <td><strong>Marca</strong></td>
+        <td>Redragon</td>
+        </tr>
+        <tr bgcolor= lightgray>
+        <td><strong>Teclado</strong></td>
+        <td>Kumara K552</td>
+        </tr>
+        <tr>
+        <td><strong>Tipo Teclado</strong></td>
+        <td>Mecánicos</td>
+        </tr>
+        <tr bgcolor= lightgray>
+        <td><strong>Tipo Switch</strong></td>
+        <td>Outemu Blue</td>
+        <tr>
+        <tr>
+        <td><strong>Mouse</strong></td>
+        <td>Centrophorus M601</td>
+        </tr>
+        <tr bgcolor= lightgray>
+        <td><strong>Orientación</strong></td>
+        <td>Ambidiestro</td>
+        </tr>
+        <tr>
+        <td><strong>Cable</strong></td>
+        <td>Mallado, 1.8 m + USB Enchapado en oro</td>
+        </tr>
+        <tr bgcolor= lightgray>
+        <td><strong>Mousepad</strong></td>
+        <td>Archelon M P001</td>
+        </tr>
+        <tr>
+        <td><strong>Grosor</strong></td>
+        <td>3 mm</td>
+        </tr>
+        <tr bgcolor= lightgray>
+        <td><strong>Tipo Deslizamiento</strong></td>
+        <td>Tela entrelazada fibras de seda que garantiza máximo deslizamiento, fondo de caucho, antideslizante y adaptable a cualquier superficie.</td>
+        </tr>
+        <td><strong>Dimensiones del paquete</strong></td>
+        <td>38 x 19 x 25,8 cm</td>
+        </tr>
+        <tr bgcolor= lightgray>
+        <td><strong>Peso del paquete</strong></td>
+        <td>2,3 kg</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+      <br>
+    <div class="valoraciones" align="">
+      <h3>Valoraciones</h3>
+      <img src="{% static 'core/img/profile 1.webp' %}" width="30" height="30" alt="Profileimage">
+      <h5>Onur Sherazade</h5>
+      <p>Buen producto</p>
+      <hr>
+      <img src="{% static 'core/img/profile 2.jpg' %}" width="30" height="30" alt="Profileimage">
+      <h5>Luian Mambo Kingz</h5>
+      <p>Excelente</p>
+      <hr>
+      <img  src="{% static 'core/img/profile 3.jpg' %}" width="30" height="30" alt="Profileimage">
+      <h5>Esteban Saxton</h5>
+      <p>Me sirve para mi hijo en España</p>
+    </div>
+    <div class="">
+        <h3>Otros productos</h3>
+        <table>
+          <tr>
+            <th><a href="{% url 'mousepad' %}" target="_blank"><img width=300px src="{% static 'core/img/mousepad razer.webp' %}" alt="Item"><div align="center"><h2><a href="../productos/mousepad.html" target="_blank">Mousepad Razer</h2></a><h4 class="item-price">$59.900</h4></div></a></th>
+          </tr>
+        </table> 
+    </div>
+     </div>   
+            </div>
+        <!-- SECCION DE COMPRA -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">Carro de compras</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ?  ITEMS DE COMPRA -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? FIN ITEMS DE COMPRA -->
+
+            <!-- TOTAL DE COMPRA -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">0</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+                            <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                        </div>
+                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                            data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--FIN TOTAL -->
+
+            <!-- MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Pronto recibirá su pedido</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN MODAL COMPRA -->
+
+
+        </div>
+
+    </section>
+    <!-- FIN SECCION DE COMPRA -->
+
+        
+    <!-- FOOTER -->
+    <footer class="bg-dark p-3 mt-5">
+        <tr>
+            <th>
+                <p class="text-center m-0 text-muted"><img src="{% static 'core/img/yit larrain.png' %}" alt="Logo" width="70"> X <img src="{% static 'core/img/importadora larrain 2.png' %}" alt="Logo2" width="70"></p>
+                <p class="text-center m-0 text-muted">Contáctanos al<a href="https://wa.me/message" target="_blank" style="color: #000000;"><img src="https://www.freepnglogos.com/uploads/whatsapp-logo-light-green-png-0.png" width="30" alt="whatsapp-logo-light-green-png-0.png" />+569 08975537</a></p>
+            </th>
+        </tr>
+    </footer>
+    <!-- FOOTER -->
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'core/js/tienda.js' %}"></script>
+</body>
+</html>

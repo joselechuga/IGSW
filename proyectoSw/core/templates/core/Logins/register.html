@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/form.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/confirmapago.css' %}">
+{% block content %}
+<form class="form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button type="submit" id="submit"> Registrarse </button>
+    
+</form>
+<div class="divbotonpago">
+    <a href="{% url 'index' %}">
+      <button class="btn botonpago">Volver Inicio</button>
+    </a>
+  </div>
+  <div class="divbotonpago">
+    <a href="{% url 'login' %}">
+      <button class="btn botonpago">Ya tienes cuenta? ven que esperas para comprar!!!!</button>
+    </a>
+  </div>
+{% endblock %}

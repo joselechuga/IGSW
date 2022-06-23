@@ -1,0 +1,126 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'core/css/celpago.css' %}">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="titulo">
+      <h1>Sección de pago</h1>
+    </div>
+
+    <div class="cuadros">
+      <!--Cuadro izquierdo seleccion de pagos-->
+      <div class="izquierdo">
+        <div class="seleccion">
+          <h3>Selecciona un metodo de pago</h3>
+        </div>
+        <div class="deb">
+          <button id="btndebito" class="btn">
+            <h3>Debito</h3>
+            <img class="imgdeb" src="{% static 'core/img/debito.png' %}" alt="">
+          </button>
+        </div>
+
+        <div class="deb">
+          <button id="btncredito" class="btn">
+            <h3>Credito</h3>
+            <img class="imgdeb" src="{% static 'core/img/credito.png' %}" alt="">
+          </button>
+        </div>
+        <div class="divbotonpago">
+          <a href="{% url 'index' %}">
+            <button class="btn botonpago">Cancelar Pago</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="derecho">
+
+        <div id="imgpago" class="imfon">
+          <img class="pagoinicio" src="{% static 'core/img/pago.png' %}" alt="">
+        </div>
+
+        <div id="rutdepagodeb" class="inpdeb">
+          <div>
+            <h3>Pago con Debito</h3>
+          </div>
+
+          <div>
+            <label for="rutpago">Ingrese su rut</label>
+            <input type="text" name="rutpago" id="rutpago">
+          </div>
+          <div class="divbotonpago">
+            <a href="{% url 'confirmapago' %}">
+              <button class="btn botonpago">PAGAR</button>
+            </a>
+          </div>
+        </div>
+
+        <div id="selectcredito" class="pagocredito">
+          <div class="titpagocred">
+            <h4>Pago con credito</h4>
+          </div>
+          <div class="datostarjeta">
+            <label for="ntarjeta">Numero de Tarjeta</label>
+            <input type="text" name="ntarjeta" id="ntarjeta">
+          </div>
+          <div>
+            <label for="fecha">Fecha de expiración</label>
+            <input type="text" name="fecha" id="fechaexpiracion">
+          </div>
+          <div class="datostarjeta">
+            <label for="cvvcv2">CVV/CV2</label>
+            <input class="cv" type="text" name="cvvcv2" id="cwtarjeta">
+          </div>
+          <div>
+            <a href="">¿Que es CVV/CV2 ?</a>
+          </div>
+
+          <div>
+            <label for="cantcuota">Cantidad de cuotas</label>
+            <input class="cantcuota" type="text" name="cantcuota" id="cantcuota">
+          </div>
+
+          <div class="divbotonpago">
+            <a href="{% url 'confirmapago' %}">
+              <button class="btn botonpago">PAGAR</button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/preload.js' %}"></script>
+    <script src="{% static 'core/js/pago.js' %}"></script>
+
+</body>
+
+</html>

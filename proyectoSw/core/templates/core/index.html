@@ -1,167 +1,202 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>YIPT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon"  src="{% static 'core/img/importadora larrain 2.png' %}" >
+    <title>Tienda</title>
 </head>
-{% if request.session.Email %}
-{{request.session.Email}} <a href="{% url 'login'  %}"> cerrar sesion </a>
-{% else %}
 
 <body>
 
-
-    <nav class="navbar bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'index' %}">Yo lo importo por ti</a>
             <a href="{% url 'login' %}" class="navbar-brand">Iniciar sesión</a>
-            <a href="{% url 'form_registrousu' %}" class="navbar-brand">Registrarse</a>
+            <a href="{% url 'register' %}" class="navbar-brand">Registrarse</a>
+            <a href="{% url 'selpago' %}">Pago </a>
         </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="{% url 'carrito' %}"><img src="{% static 'core/img/carrito.png' %}" alt="Item" width="50" height="50"></a>
+        <a href="{% url 'index' %}"><img src="{% static 'core/img/yit larrain.png' %}" alt="Item" width="75" height="75"></a>
     </nav>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
-                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false"></img>
-                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
-                    <table id="lista-carrito" class="table">
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-
-                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-                        Compra</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-
-    <div class="container-fluid">
-    <div class="carrousel">
-        <section class="awSlider">
-            <div  class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target=".carousel" data-slide-to="0" class="active"></li>
-                <li data-target=".carousel" data-slide-to="1"></li>
-                <li data-target=".carousel" data-slide-to="2"></li>
-                <li data-target=".carousel" data-slide-to="3"></li>
-              </ol>
-          
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <img src="http://www.adobewordpress.com/wp-content/uploads/2014/02/wallpaper-thumb-941.jpg">
-                  <div class="carousel-caption">Görsel #1</div>
-                </div>
-                <div class="item">
-                  <img src="http://www.adobewordpress.com/wp-content/uploads/2014/02/wallpaper-thumb-101.jpg">
-                  <div class="carousel-caption">Görsel #2</div>
-                </div>
-                <div class="item">
-                  <img src="http://www.adobewordpress.com/wp-content/uploads/2014/02/wallpaper-thumb-1051.jpg">
-                  <div class="carousel-caption">Görsel #3</div>
-                </div>
-                <div class="item">
-                  <img src="http://www.adobewordpress.com/wp-content/uploads/2013/07/wallpaper-thumb-74.jpg">
-                  <div class="carousel-caption">Görsel #4</div>
-                </div>
-              </div>
-          
-              <!-- Controls -->
-              <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Geri</span>
-              </a>
-              <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">İleri</span>
-              </a>
-            </div>
-          </section>
-    </div>
-
-        <div id="titulo" class="row">
-            <h1>Productos</h1>
+    <header>
+        <div class="container">
+            <h1 class="text-center">Bienvenido a <img src="{% static 'core/img/yit larrain.png' %}" alt="Logo" width="200"></h1>
         </div>
+    </header>
+    <!-- COMIENZO DE TIENDA -->
+    <section class="store">
+        <div class="container">
+            <div class="items">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 class="item-title"><a href="#">MOUSEPAD RAZER</a></h3>
+                            <a href="#"><img class="item-image" src="{% static 'core/img/mousepad razer.webp' %}"></a>
 
-
-        <div id="contenedor_tarjetas" class="row">
-            <div class="card" style="width: 18rem;">
-                <a href="{% url 'mousepad' %}">
-                    <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
-                    <small class="textocarta">Mousepad Razer</small>
-                    <div class="card-body">
-                        <p class="card-text"><a href="{% url 'mousepad' %}">$10.990</a></p>
+                            <div class="item-details">
+                                <h4 class="item-price">$59.900</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
                     </div>
-                </a>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="{% url 'combo_teclado' %}">
-                    <img class="imagen" src="{% static 'core/img/combo_teclado.png' %}" class="card-img-top" alt="...">
-                    <small class="textocarta">Combo Redragon</small>
-                    <div class="card-body">
-                        <p class="card-text"><a class="enlaceprecio" href="{% url 'combo_teclado' %}">$51.990</a></p>
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 class="item-title"><a href="#">MICROFONO BLUE YETI</a></h3>
+                            <a href="#"><img class="item-image" src="{% static 'core/img/yeti.webp' %}"></a>
+                            <div class="item-details">
+                                <h4 class="item-price">$60.000</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
                     </div>
-                    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
-                </a>
-            </div>
+                </div>
 
-            <div class="card" style="width: 18rem;">
-                <a href="">
-                    <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><a class="enlaceprecio" href="producto.html">$10.990</a></p>
-                    </div>
-                </a>
-            </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 class="item-title"><a href="{% url 'combored' %}">COMBO REDRAGON</a></h3>
+                            <a href="{% url 'combored' %}"><img class="item-image" src="{% static 'core/img/comboredragon.png' %}"></a>
 
-            <div class="card" style="width: 18rem;">
-                <a href="{% url 'login' %}">
-                    <img class="imagen" src="{% static 'core/img/mousepad.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><a href="producto.html">$10.990</a></p>
+                            <div class="item-details">
+                                <h4 class="item-price">$45.900</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 class="item-title"><a href="#">AUDIFONOS LOGITECH G PRO</a></h3>
+                            <a href="#"><img class="item-image" src="{% static 'core/img/headset.webp' %}"></a>
+                            <div class="item-details">
+                                <h4 class="item-price">$69.900</h4>
+                                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+    <!-- FIN DE TIENDA -->
+    <!-- SECCION DE COMPRA -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">Carro de compras</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ?  ITEMS DE COMPRA -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? FIN ITEMS DE COMPRA -->
+
+            <!-- TOTAL DE COMPRA -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">0</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+                            <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                        </div>
+                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                            data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--FIN TOTAL -->
+
+            <!-- MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Pronto recibirá su pedido</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN MODAL COMPRA -->
 
 
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/sweetalert2.min.js"></script>
-        <script src="../core/carrito.js"></script>
-        <script src="../core/pedido.js"></script>
+        </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    </section>
+    <!-- FIN SECCION DE COMPRA -->
+
+
+    <!-- FOOTER -->
+    <footer class="bg-dark p-3 mt-5">
+        <tr>
+            <th>
+                <p class="text-center m-0 text-muted"><img src="{% static 'core/img/yit larrain.png' %}" alt="Logo" width="70"> X <img src="{% static 'core/img/importadora larrain 2.png' %}" alt="Logo2" width="70"></p>
+                <p class="text-center m-0 text-muted">Contáctanos al<a href="https://wa.me/message" target="_blank" style="color: #000000;"><img src="https://www.freepnglogos.com/uploads/whatsapp-logo-light-green-png-0.png" width="30" alt="whatsapp-logo-light-green-png-0.png" />+569 08975537</a></p>
+            </th>
+        </tr>
+    </footer>
+    <!-- FOOTER -->
+
+
+
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'core/js/tienda.js' %}"></script>
+
 </body>
-{% endif %}
 
 </html>
